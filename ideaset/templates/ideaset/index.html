@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Hello world of ToDo</h1>
-</body>
-</html>
+{% extends 'ideaset/base.html' %}
+{% if task_list %}
+  {% block content %}
+    <div class="col-md-12" style="height:90vh;">
+    <div class="row">
+    {% for task in task_list %}
+      <div class="col-md-3 mb-1 mt-2 ">
+        <div class="card {% if task.task_priority <= 2 %} bg-danger {% else %}  bg-light {% endif %} ">
+          <div class="card-body">
+            <h3 class="card-title">{{task.task_name}}</h3>
+            <p class="card-text">{{task.task_desc}}</p>
+            <p>{{task.task_date}}</p>
+            <p>{{task.task_priority}}</p>
+            <p>{{task.user}}</p>
+            <a class="btn btn-danger" href="{% url 'remove' task.id %}">Completed</a>
+            <a class="btn btn-warning" href="{% url 'edit' task.id %}">Edit</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+    </div>
+  {% endblock %}
+{% else %}
+      <h1>Please login to add/ check your Tasks</h1>
+{% endif %}
