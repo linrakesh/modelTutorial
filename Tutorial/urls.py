@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', include('django.contrib.flatpages.urls')),
+    path('pages/', include('django.contrib.flatpages.urls')),
     path('admin/', admin.site.urls),
     path('', include('ideaset.urls')),
     

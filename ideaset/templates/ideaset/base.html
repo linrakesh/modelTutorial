@@ -24,21 +24,28 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'add' %}">Add New Task</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Login</a>
+          </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Welcome 
           </a>
+          
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><a class="dropdown-item" href="#">Forgot Password</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
-            
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+          <a class="nav-link" href="/pages/contact/" tabindex="-1" aria-disabled="true">Contact us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/pages/privacy" tabindex="-1" aria-disabled="true">Privacy</a>
+       
         </li>
       </ul>
       
